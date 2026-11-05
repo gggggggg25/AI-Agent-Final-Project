@@ -1,0 +1,128 @@
+{
+  "dataset_summary": {
+    "rows": 649,
+    "columns": 33,
+    "missing_values": 0,
+    "target": "G3",
+    "target_stats": {
+      "count": 649.0,
+      "mean": 11.91,
+      "std": 3.23,
+      "min": 0.0,
+      "25%": 10.0,
+      "50%": 12.0,
+      "75%": 14.0,
+      "max": 19.0
+    },
+    "categorical_columns": [
+      "school",
+      "sex",
+      "address",
+      "famsize",
+      "Pstatus",
+      "Mjob",
+      "Fjob",
+      "reason",
+      "guardian",
+      "schoolsup",
+      "famsup",
+      "paid",
+      "activities",
+      "nursery",
+      "higher",
+      "internet",
+      "romantic"
+    ],
+    "numeric_columns": [
+      "age",
+      "Medu",
+      "Fedu",
+      "traveltime",
+      "studytime",
+      "failures",
+      "famrel",
+      "freetime",
+      "goout",
+      "Dalc",
+      "Walc",
+      "health",
+      "absences",
+      "G1",
+      "G2",
+      "G3"
+    ],
+    "pct_zero_final_grade": 2.3
+  },
+  "distribution_chart": "target_dist.png",
+  "model_with_prior_grades": {
+    "features_dropped": [],
+    "best_model": "random_forest",
+    "all_models": {
+      "ridge": {
+        "cv_r2_mean": 0.836,
+        "test_r2": 0.849,
+        "test_mae": 0.764,
+        "test_rmse": 1.214
+      },
+      "random_forest": {
+        "cv_r2_mean": 0.853,
+        "test_r2": 0.841,
+        "test_mae": 0.751,
+        "test_rmse": 1.246
+      }
+    },
+    "top_features": {
+      "G2": 1.6037,
+      "absences": 0.0266,
+      "G1": 0.0099,
+      "age": 0.0054,
+      "Medu": 0.004,
+      "failures": 0.0026,
+      "reason": 0.002,
+      "goout": 0.0017,
+      "health": 0.0013,
+      "famsup": 0.0012
+    },
+    "charts": [
+      "importance_with_G1_G2.png",
+      "pred_vs_actual_with_G1_G2.png"
+    ]
+  },
+  "model_without_prior_grades": {
+    "features_dropped": [
+      "G1",
+      "G2"
+    ],
+    "best_model": "random_forest",
+    "all_models": {
+      "ridge": {
+        "cv_r2_mean": 0.272,
+        "test_r2": 0.163,
+        "test_mae": 2.151,
+        "test_rmse": 2.858
+      },
+      "random_forest": {
+        "cv_r2_mean": 0.289,
+        "test_r2": 0.188,
+        "test_mae": 2.046,
+        "test_rmse": 2.815
+      }
+    },
+    "top_features": {
+      "failures": 0.3137,
+      "higher": 0.0472,
+      "absences": 0.0303,
+      "studytime": 0.0253,
+      "reason": 0.0163,
+      "goout": 0.0147,
+      "Dalc": 0.0146,
+      "famrel": 0.0135,
+      "health": 0.0124,
+      "school": 0.0106
+    },
+    "charts": [
+      "importance_no_G1_G2.png",
+      "pred_vs_actual_no_G1_G2.png"
+    ]
+  }
+}
